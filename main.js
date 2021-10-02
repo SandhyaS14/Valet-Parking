@@ -22,7 +22,7 @@ function add() {
 
 function uploadBackground() {
 	//Define function ‘uploadBackground’
-	ctx.drawImage(background_imagetag, 0, 0, canvas.width, canvas.heght);
+	ctx.drawImage(background_imagetag, 0, 0, canvas.width, canvas.height);
 };
 
 function uploadgreencar() {
@@ -68,7 +68,7 @@ function my_keydown(e)
 function up()
 {
 	//Define function to move the car upward
-	if(carY >= 0){
+	if(carY > 0){
 		carY -= 10;
 		uploadBackground();
 		uploadgreencar();
@@ -78,14 +78,29 @@ function up()
 function down()
 {
 	//Define function to move the car downward
+		if(carY < 300){
+		carY += 10;
+		uploadBackground();
+		uploadgreencar();
+	} 
 }
 
 function left()
 {
 	//Define function to move the car left side
+	if(carX > 0){
+		carX -= 10;
+		uploadBackground();
+		uploadgreencar();
+	} 
 }
 
 function right()
 {
 	//Define function to move the car right side
+	if(carX < 725){
+		carX += 10;
+		uploadBackground();
+		uploadgreencar();
+	} 
 }
